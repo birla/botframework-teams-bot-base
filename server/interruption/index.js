@@ -28,14 +28,6 @@ class RootInterruption extends ComponentDialog {
         case "hey":
           await innerDc.cancelAllDialogs();
           return await innerDc.beginDialog(dialogConst.rootDialog);
-        case "#rm":
-        case "rm":
-          await innerDc.cancelAllDialogs();
-          return await innerDc.beginDialog(dialogConst.RMDispatcher);
-        case "#agent":
-        case "agent":
-          await innerDc.cancelAllDialogs();
-          return await innerDc.beginDialog(dialogConst.AgentDispatcher);
       }
     }
   }
