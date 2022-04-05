@@ -43,10 +43,11 @@ class MainDialog extends ComponentDialog {
     this.addDialog(new ConfirmPrompt(CONFIRM_PROMPT));
     this.addDialog(
       new WaterfallDialog(dialogConst.ROOT_DIALOG_WATERFALL_1, [
-        this.promptStep.bind(this),
-        this.loginStep.bind(this),
-        this.displayTokenPhase1.bind(this),
-        this.displayTokenPhase2.bind(this),
+        // this.promptStep.bind(this),
+        // this.loginStep.bind(this),
+        // this.displayTokenPhase1.bind(this),
+        // this.displayTokenPhase2.bind(this),
+        this.welcomeStep.bind(this),
       ])
     );
 
@@ -164,6 +165,11 @@ class MainDialog extends ComponentDialog {
       );
     }
     return await stepContext.endDialog();
+  }
+
+  async welcomeStep(stepContext) {
+    await stepContext.context.sendActivity("Welcome to Emirtus bot");
+    return stepContext.endDialog();
   }
 }
 
