@@ -2,7 +2,7 @@
   "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.5/MicrosoftTeams.schema.json",
   "manifestVersion": "1.5",
   "version": "1.0.0",
-  "id": "<<YOUR-MICROSOFT-APP-ID>>",
+  "id": "<YOUT BOT ID HERE>",
   "packageName": "com.teams.sample.teamsconversationbot",
   "developer": {
     "name": "teamsConversationBot",
@@ -25,21 +25,13 @@
   "accentColor": "#FFFFFF",
   "bots": [
     {
-      "botId": "<<YOUR-MICROSOFT-APP-ID>>",
-      "scopes": [
-        "personal",
-        "groupchat",
-        "team"
-      ],
+      "botId": "<YOUT BOT ID HERE>",
+      "scopes": ["personal", "groupchat", "team"],
       "supportsFiles": false,
       "isNotificationOnly": false,
       "commandLists": [
         {
-          "scopes": [
-            "personal",
-            "groupchat",
-            "team"
-          ],
+          "scopes": ["personal", "groupchat", "team"],
           "commands": [
             {
               "title": "MentionMe",
@@ -58,9 +50,6 @@
       ]
     }
   ],
-  "permissions": [
-    "identity",
-    "messageTeamMembers"
-  ],
+  "permissions": ["identity", "messageTeamMembers"],
   "validDomains": []
 }
