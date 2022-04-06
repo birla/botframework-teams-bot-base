@@ -31,8 +31,8 @@ const {
 
 const { CosmosDbPartitionedStorage } = require("botbuilder-azure");
 
-const { TeamsBot } = require("./bot/teamsBot");
-const { MainDialog } = require("./dialogs/mainDialog");
+const { TeamsBot } = require("./server/bot/teamsBot");
+const { MainDialog } = require("./server/dialogs/mainDialog");
 
 const credentialsFactory = new ConfigurationServiceClientCredentialFactory({
   MicrosoftAppId: process.env.MicrosoftAppId,
@@ -70,7 +70,7 @@ adapter.onTurnError = async (context, error) => {
 };
 
 // In memory cache
-const cacheProvider = require("./services/cacheProvider");
+const cacheProvider = require("./server/services/cacheProvider");
 
 // Setup cache singleton instance
 cacheProvider.start(function (err) {
@@ -82,7 +82,7 @@ const winston = require("winston");
 const {
   AzureApplicationInsightsLogger,
 } = require("winston-azure-application-insights");
-const { initializeLogger } = require("./services/logger");
+const { initializeLogger } = require("./server/services/logger");
 let logger = initializeLogger();
 if (process.env.Environment !== "production") {
   // add a console logger transport
