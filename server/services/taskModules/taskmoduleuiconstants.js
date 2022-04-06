@@ -1,5 +1,5 @@
 const { UISettings } = require("./uisettings");
-const { TaskModulesIds } = require("./taskmoduleid");
+const { TaskModulesIds } = require("./taskModuleId");
 
 //ID
 const TaskModuleUIConstants = {};
